@@ -1,14 +1,11 @@
 import React, {useState, useEffect} from 'react';
-import store from '../redux/store';
+import { useSelector } from 'react-redux';
 
-const Transfer = (props) => {
+const Transfer = () => {
     
+    const userId = useSelector((state)=>state.user);
 
-    console.log(store.getState());
-   
-   let unsubscribe = store.subscribe(() => {console.log(store.getState())});
-
-   unsubscribe();
+    console.log(userId); 
 
     
     return (

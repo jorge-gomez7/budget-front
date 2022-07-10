@@ -1,9 +1,12 @@
 import React, {useEffect} from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import {bindActionCreators} from 'redux';
 
+import {actionCreators} from '../redux/actions/index';
 import Sidebar from "../assets/shared/sidebar/Sidebar";
 import Topbar from "../assets/shared/Topbar/Topbar";
-import store from '../redux/store';
-import {action} from '../redux/actions';
+
+
 import {
   Card,
   CardBody,
@@ -19,18 +22,19 @@ import {
 
 const Home = () => {  
  
+  const userId = useSelector((state)=>state.user);
+  console.log(userId);
+  const dispatch = useDispatch();
 
+  const {setUserId} = bindActionCreators(actionCreators, dispatch);
+  
   useEffect(()=>{
+    setUserId(15);
+  },[])
   
- },[])
-
- 
-  store.dispatch(action(15));
- 
-  
-  console.log('Here is');
-  const redux = store.getState();
-  console.log(redux);  
+  useEffect(()=>{
+    console.log(userId);
+  },[setUserId])
   
   return (
     <>
@@ -46,7 +50,8 @@ const Home = () => {
               Some quick example text to build on the card title and make up the
               bulk of the card's content.
             </CardText>
-            <Button>Button</Button>
+            {/* <Button>Agregar</Button> */}
+            {/* <Button onClick={()=>setUserId(15)}>Button</Button> */}
           </CardBody>
         </Card>
       </div>
