@@ -1,38 +1,81 @@
 .App {
+  width: 100vw;
+  height: 100vh;
+}
+.background{    
+  height: 100%; 
+  width: 100%;    
+  background-image: url('./assets/background/arco.jpg');            
+  background-repeat: no-repeat;
+  background-size: cover;  
+}
+.login-card{
+  background-color: rgba(255, 255, 255, 0.6);
+  width: 25%;
+  height: 100%;
+  margin-left:75%;    
+}
+.login-body{
+  margin-top: 10%;
+}
+.login-submit{
+  background-color: #139cf8;
+  border-color: #139cf8;
+  width: 100%;
+  height: 50px;
+}
+.img-core-code{
+  width: 40%;
+  margin-left: 30%;  
+}
+.final-project{
+  position: relative;
   text-align: center;
+  margin-top: -15%; 
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.sidebar{
+  height: 100%;
+  width: 10%;
+  background-color: #139cf8;   
+  position: absolute
+  
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.sidebar-list{
+  height: auto;
+  width: 100%;  
+  padding: 0;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.sidebar-list .row{
+  width: 100%;
+  height: 50px;  
+  list-style-type: none;
+  margin: 0%;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  flex-direction: row;
   color: white;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Lucida Grande';
+}
+.sidebar-list .row:hover{
+  cursor: pointer;
+  background-color: #4CB2F6;
+}
+.sidebar-list #active{
+  background-color: #4CB2F6;
+}
+.row #icon{
+  flex: 30%;
+  display: grid;
+  place-items: center;
+}
+.row #title{
+  flex: 70%;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.home{
+  width: 60%;
+  margin-left: 25%;
+  margin-top: 2%;
+  position: absolute;
 }
