@@ -1,16 +1,25 @@
 import React, {useState, useEffect} from 'react';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 
 const Transfer = () => {
     
     const userId = useSelector((state)=>state.user);
+    
 
-    console.log(userId); 
+    useEffect(()=>{
+        console.log('from transaction one', userId)
+    },[])
+
+
+    useEffect(()=>{
+        console.log('from transaction two', userId)
+    },[userId])
+    
 
     
     return (
         <div>
-            Transfer Works!
+            {userId}
         </div>
     );
 };

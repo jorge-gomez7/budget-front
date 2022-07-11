@@ -1,8 +1,8 @@
 
 const reducer = (state =0, action) =>{
     switch(action.type) {        
-        case 'SET_ID_PERSON':
-            return  state + action.payload;            
+        case 'SET_USER_ID':
+            return  action.payload;            
         default: 
             return state;
     }

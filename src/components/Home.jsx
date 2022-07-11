@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import {bindActionCreators} from 'redux';
 
 import {actionCreators} from '../redux/actions/index';
+
 import Sidebar from "../assets/shared/sidebar/Sidebar";
 import Topbar from "../assets/shared/Topbar/Topbar";
 
@@ -23,18 +24,25 @@ import {
 const Home = () => {  
  
   const userId = useSelector((state)=>state.user);
-  console.log(userId);
+  
   const dispatch = useDispatch();
 
   const {setUserId} = bindActionCreators(actionCreators, dispatch);
   
-  useEffect(()=>{
-    setUserId(15);
-  },[])
   
   useEffect(()=>{
-    console.log(userId);
-  },[setUserId])
+    console.log('first', userId);
+    setUserId(35);
+    
+  },[])
+
+  useEffect(()=>{
+    
+    
+    console.log('second', userId);
+  },[userId])
+  
+  
   
   return (
     <>
@@ -42,7 +50,7 @@ const Home = () => {
       <div className="home">
         <Card>
           <CardBody>
-            <CardTitle tag="h5">Card title</CardTitle>
+            <CardTitle tag="h5">{userId}</CardTitle>
             <CardSubtitle className="mb-2 text-muted" tag="h6">
               Card subtitle
             </CardSubtitle>
@@ -51,7 +59,7 @@ const Home = () => {
               bulk of the card's content.
             </CardText>
             {/* <Button>Agregar</Button> */}
-            {/* <Button onClick={()=>setUserId(15)}>Button</Button> */}
+            <Button>Button</Button>
           </CardBody>
         </Card>
       </div>
