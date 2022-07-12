@@ -1,9 +1,12 @@
 import React from "react";
 import "../../../App.css";
+import { useNavigate    } from 'react-router-dom';
 
 import { SidebarData } from "./SidebarData";
 
 const Sidebar = () => {
+  let navigate = useNavigate();
+
   return (
     <div className="sidebar">
       <ul className="sidebar-list">
@@ -14,7 +17,7 @@ const Sidebar = () => {
               className="row"
               key={key}
               onClick={() => {
-                window.location.pathname = val.link;
+                navigate(val.link);
               }}
             >
               <div id="icon">{val.icon}</div>
