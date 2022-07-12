@@ -6,6 +6,7 @@ import {actionCreators} from '../redux/actions/index';
 
 import Sidebar from "../assets/shared/sidebar/Sidebar";
 import Topbar from "../assets/shared/Topbar/Topbar";
+import Transfer from './Transfer';
 
 
 import {
@@ -63,7 +64,7 @@ const Home = () => {
           </CardBody>
         </Card>
       </div>
-
+<Transfer/>
       <Sidebar />
     </>
   );

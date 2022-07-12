@@ -17,8 +17,7 @@ function App() {
             <Route path='/register' element={<Register/>}/>
             
               <Route path='/home' element={<Home/>}/>
-              <Route path='/transfer' element={<Transfer/>}/>
-            
+              <Route path='/transfer' element={<Transfer/>}/>         
             
         </Routes>
       </BrowserRouter>  

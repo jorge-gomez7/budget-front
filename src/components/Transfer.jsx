@@ -1,21 +1,10 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, store, getState} from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import {bindActionCreators} from 'redux';
+import {actionCreators} from '../redux/actions/index';
 
-const Transfer = () => {
-    
-    const userId = useSelector((state)=>state.user);
-    
-
-    useEffect(()=>{
-        console.log('from transaction one', userId)
-    },[])
-
-
-    useEffect(()=>{
-        console.log('from transaction two', userId)
-    },[userId])
-    
-
+const Transfer = () => {    
+    const userId = useSelector((state)=>state.user);            
     
     return (
         <div>
